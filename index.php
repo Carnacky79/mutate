@@ -19,6 +19,11 @@
             border-bottom: 1px solid darkgrey;
         }
 
+        a:hover {
+            text-decoration:none;
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -114,11 +119,11 @@
         popolamento();
     });
 
-    $.ready(
+    $.ready(popolamento());
 
-            popolamento()
-
-    );
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 
     function del(span) {
         var id = $(span).attr("id-user");

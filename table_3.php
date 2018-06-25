@@ -15,9 +15,9 @@
                     echo '<td style="text-align:center; "><span id="delete" id-user="'.$row['id']. '" onclick="del(this)" style="cursor:pointer;font-weight: 900;color: indianred;">X</span></td>';
                     echo '<td>'.$row['nome'].'</td>';
                     echo '<td>'.$row['email'].'</td>';
-                    echo '<td>www.mutateevents.com/mutate/token.php?token='.$row['token'].'</td>';
+                    echo '<td><a href="'.(isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/mutate/".'token.php?token='.$row['token'].'">'.(isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/mutate/".'token.php?token='.$row['token'].'</a></td>';
                     if($csv_cnt['cnt'] > 0) {
-                        echo '<td><a href="csv.php?id=' . $row['id'] . '">Scarica il CSV</a></td>';
+                        echo '<td><a data-placement="right" data-toggle="tooltip" title="Scarica il CSV" href="csv.php?id=' . $row['id'] . '">Scarica il CSV</a></td>';
                     }else{
                         echo '<td>Ancora nessun record</td>';
                     }

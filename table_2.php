@@ -11,7 +11,7 @@
         $max = strlen($codeAlphabet); // edited
 
         for ($i=0; $i < $length; $i++) {
-            $token .= $codeAlphabet[random_int(0, $max-1)];
+            $token .= $codeAlphabet[mt_rand(0, $max-1)];
         }
 
         return $token;
